@@ -1,0 +1,12 @@
+{
+  "expectedSuccess" : false,
+  "message" : "All duplicate values are provided",
+  "data" : {
+    "student" : {
+      "name" : "jEFHYlYzQK"
+    },
+    "semester" : "FIRST",
+    "subject" : "ENGLISH",
+    "marks" : 566217383
+  }
+}

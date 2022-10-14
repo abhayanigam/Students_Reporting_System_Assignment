@@ -1,0 +1,38 @@
+<configuration scan="true" scanPeriod="30 seconds">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STDOUT" />
+    </appender>
+
+    <logger name="org.springframework" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+    <logger name="org.springframework.security.web" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+    <logger name="org.springframework.security.oauth2.provider" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+    <!--Refer: https://stackoverflow.com/questions/21718097/how-to-configure-logback-for-mybatis-to-print-my-sql -->
+    <logger name="com.studentreporting.repository.mapper" level="INFO"  additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+
+    <logger name="org.hibernate" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+
+    <logger name="com.studentreporting" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

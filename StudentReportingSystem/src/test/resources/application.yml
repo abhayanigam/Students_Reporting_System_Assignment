@@ -1,0 +1,34 @@
+
+logging:
+    level:
+        org.springframework.security: INFO
+        root: INFO
+    file: "application.log"
+
+server:
+    port: 8080
+
+local:
+    server:
+        port: 8080
+
+
+#jmx properties
+jmx:
+    config:
+        username: "admin"
+        password: "admin"
+
+
+database:
+    config:
+        driver: "com.mysql.jdbc.Driver"
+        url: "jdbc:mysql://localhost:3306/studentReportingSystem"
+        username: "root"
+        password: "root"
+        initialSize: 10
+        maxActive: 50
+        maxWait: 1000
+
+mybatis:
+    executor-type: simple
